@@ -54,12 +54,14 @@ const closeModal = () => {
 
 const insertLevel = (targetIndex) => {
     let i;
+
+    // TO-DO: Add data validation for target index.
+
     for (i = levelsData.length - 1; i >= targetIndex; i--) {
         // shift every item after target index one item right
         levelsData[i + 1] = levels[i];
     }
-    // insert
-    levelsData[targetIndex] = newLevel;
+    levelsData[targetIndex] = newLevel; // insert
 }
 
 const createLevel = () => {
@@ -67,6 +69,9 @@ const createLevel = () => {
 }
 
 const updateLevel = (newLevel, targetIndex) => {
+
+    // TO-DO: Add data validation for target index.
+
     levelsData = levelsData.map((level, index) => {
         if (index == targetIndex) {
             return newLevel;
@@ -82,8 +87,11 @@ const deleteLevel = (targetIndex) => {
     // levelsData = levelsData.filter((level, index) => index !== targetIndex);
 
     // classic for-loop approach: 
-    // shift every element after target index one item left
+
+    // TO-DO: Add data validation for target index.
+
     for (let i = targetIndex; i < levelsData.length; i++) {
+        // shift every element after target index one item left
         levelsData[i] = levelsData[i + 1];
     }
     levelsData.pop(); // throw out duplicated last item 
@@ -91,7 +99,9 @@ const deleteLevel = (targetIndex) => {
 }
 
 const handleSubmit = (e) => {
+    
     // TO-DO: Add data validation for all fields.
+    
     const newLevel = {
         name: document.getElementById("name").value,
         creator: document.getElementById("creator").value,
