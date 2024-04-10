@@ -42,10 +42,10 @@
         <form id="modal-form" class="modal-form">
             <h2 style="margin-bottom: 1rem">Update Level</h2>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name" maxlength="20"><br><br>
         
             <label for="creator">Creator:</label>
-            <input type="text" id="creator" name="creator"><br><br>
+            <input type="text" id="creator" name="creator" maxlength="20"><br><br>
         
             <label for="difficulty">Difficulty:</label>
             <select id="difficulty" name="difficulty">
@@ -64,10 +64,10 @@
             </select><br><br>
         
             <label for="songID">Song ID:</label>
-            <input type="number" id="songID" name="songID"><br><br>
+            <input type="number" id="songID" name="songID" min="0" max="999999"><br><br>
         
             <label for="percent">Percentage:</label>
-            <input type="number" id="percent" name="percent"><br><br>   
+            <input type="number" id="percent" name="percent" min="0" max="100"><br><br>   
         
             <input type="submit" value="Submit">
         </form>            
