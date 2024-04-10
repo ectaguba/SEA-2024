@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <h1 class="header">My Geometry Dash Levels List</h1>
+    <div style="margin-left: 2rem;">
+        <input type="text" name="searchInput" id="searchInput" placeholder="Search..." oninput="handleSearch()" class="search-levels-input">
+        <input type="checkbox" name="sortCheckbox" id="sortCheckbox"  onclick="handleSort()">
+        <label for="sortCheckbox">Sort By Difficulty</label>
+    </div>
+    <div id="levels-list">
+        <!-- scripts.js renders data like this example card -->
+        <!-- 
+        <div class="level-container">
+            <div class="details">
+                <div class="details-difficulty">
+                    <img src="./assets/easy.png" class="details-difficulty-img">
+                    <p class="details-difficulty-text">Easy</p>
+                </div>
+                <div class="details-text">
+                    <h3 class="details-text-name">Level</h3>
+                    <p class="details-text-creator">By Creator</p>
+                </div>
+            </div>
+            <div class="percent-container" id="percent-container">
+                <div class="percent-bar" id="percent-bar"></div>
+                <p class="percent-value">100%</p>
+            </div>
+            <div class="level-btn-container">
+                <button type="button" class="update-btn">Update</button>
+                <button type="button" class="delete-btn">Delete</button>
+            </div>
+        </div> 
+        -->
+    </div>
+    <button type="button" onclick="handleAdd()" class="add-btn">Add</button>
+    <div id="modal-container" class="modal-container">
+        <form id="modal-form" class="modal-form">
+            <h2 style="margin-bottom: 1rem">Update Level</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+        
+            <label for="creator">Creator:</label>
+            <input type="text" id="creator" name="creator"><br><br>
+        
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" name="difficulty">
+                <option value="NA">NA</option>
+                <option value="Auto">Auto</option>
+                <option value="Easy">Easy</option>
+                <option value="Normal">Normal</option>
+                <option value="Hard">Hard</option>
+                <option value="Harder">Harder</option>
+                <option value="Insane">Insane</option>
+                <option value="Easy Demon">Easy Demon</option>
+                <option value="Medium Demon">Medium Demon</option>
+                <option value="Hard Demon">Hard Demon</option>
+                <option value="Insane Demon">Insane Demon</option>
+                <option value="Extreme Demon">Extreme Demon</option>
+            </select><br><br>
+        
+            <label for="songID">Song ID:</label>
+            <input type="number" id="songID" name="songID"><br><br>
+        
+            <label for="percent">Percentage:</label>
+            <input type="number" id="percent" name="percent"><br><br>   
+        
+            <input type="submit" value="Submit">
+        </form>            
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
