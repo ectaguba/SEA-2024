@@ -14,15 +14,22 @@ button {
     transition: 0.25s;
 }
 
-#sortCheckbox {
-    padding: 0.5rem;
-}
 
 .header {
     text-align: center;
     padding: 1rem;
 }
 
+.search-levels-input {
+    padding: 0.25rem 1rem;
+    margin-bottom: 1rem;
+}
+
+#sortCheckbox {
+    padding: 0.5rem;
+}
+
+/* array container */
 #levels-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -42,11 +49,7 @@ button {
     }
 }
 
-.search-levels-input {
-    padding: 0.25rem 1rem;
-    margin-bottom: 1rem;
-}
-
+/* array item container */
 .level-container {
     display: grid;
     grid-template-rows: auto 20px auto;
@@ -60,6 +63,7 @@ button {
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* display difficulty, name, and creator */
 .details {
     display: grid;
     grid-template-columns: auto auto;
@@ -85,6 +89,7 @@ button {
     text-align: center;
 }
 
+/* display percentage */
 .percent-container {
     grid-column: 1 / -1;
     grid-row: 2 / -1;
@@ -104,6 +109,7 @@ button {
 }
 
 .percent-value {
+    /* place in the center of the bar */
     position: relative;
     text-align: center;
     top: -21px;
@@ -111,6 +117,7 @@ button {
     color: white;
 }
 
+/* data manipulation buttons */
 .level-btn-container {
     grid-column: 1 / -1;
     grid-row: 3 / -1;
@@ -149,6 +156,7 @@ button {
     background-color: blue;
 }
 
+/* modal styling */
 .modal-container {  
     display: none;
     position: fixed;
