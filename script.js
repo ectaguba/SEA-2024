@@ -78,7 +78,15 @@ const updateLevel = (newLevel, targetIndex) => {
 }
 
 const deleteLevel = (targetIndex) => {
-    levelsData = levelsData.filter((level, index) => index !== targetIndex);
+    // // JavaScript built-in:
+    // levelsData = levelsData.filter((level, index) => index !== targetIndex);
+
+    // classic for-loop approach: 
+    // shift every element after target index one item left
+    for (let i = targetIndex; i < levelsData.length; i++) {
+        levelsData[i] = levelsData[i + 1];
+    }
+    levelsData.pop(); // throw out duplicated last item 
     displayLevels(levelsData);
 }
 
