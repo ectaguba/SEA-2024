@@ -52,9 +52,18 @@ const closeModal = () => {
     selectedIndex = -1;
 }
 
+const insertLevel = (targetIndex) => {
+    let i;
+    for (i = levelsData.length - 1; i >= targetIndex; i--) {
+        // shift every item after target index one item right
+        levelsData[i + 1] = levels[i];
+    }
+    // insert
+    levelsData[targetIndex] = newLevel;
+}
+
 const createLevel = () => {
     levelsData = [...levelsData, DEFAULT_LEVEL];
-
 }
 
 const updateLevel = (newLevel, targetIndex) => {
@@ -232,8 +241,10 @@ const selectionSort = (inputArr) => {
     let sortedArr = [...inputArr] // create copy
     for (let i = 0; i < sortedArr.length - 1; i++) {
         let minIndex = i;
+        let minDiff = DIFFICULTY_ORDER.indexOf(sortedArr[minIndex].difficulty);
         for (let j = i + 1; j < sortedArr.length; j++) {
-            if (DIFFICULTY_ORDER.indexOf(sortedArr[j].difficulty) < DIFFICULTY_ORDER.indexOf(sortedArr[minIndex].difficulty)) {
+            let jDiff = DIFFICULTY_ORDER.indexOf(sortedArr[j].difficulty)
+            if (jDiff < minDiff) {
                 minIndex = j; // find and save minimum
             }
         }
